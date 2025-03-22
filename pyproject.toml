@@ -1,0 +1,22 @@
+[project]
+name = "mcp-sleep"
+version = "0.1.0"
+description = "Tool that allows you to wait a certain time to continue the execution of an agent."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "click>=8.1.8",
+    "dotenv>=0.9.9",
+    "mcp>=1.5.0",
+]
+
+[[project.authors]]
+name = "StylusFrost"
+email = "pm.diaz.pena@gmail.com"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+mcp-sleep = "mcp_sleep:main"
