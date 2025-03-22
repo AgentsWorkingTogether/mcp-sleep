@@ -9,7 +9,7 @@
             "type": "debugpy",
             "request": "launch",
             "module": "mcp_sleep",
-            "args": ["-vv","--transport","sse"        ]
+            "args": ["-vv"]
         }
     ]
 }

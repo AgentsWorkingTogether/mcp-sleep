@@ -84,6 +84,13 @@ async def call_tool(name: str, arguments: Any) -> Sequence[TextContent]:
             if not seconds:
                 raise ValueError("Seconds is required.")
 
+            if seconds > int(ctx.sleep.config.timeout):
+                return [
+                    TextContent(
+                        type="text",
+                        text=f"My configuration does not allow me to make you wait more than {ctx.sleep.config.timeout} seconds",  # noqa: E501
+                    )
+                ]
             # Sleep seconds value
             await ctx.sleep.wait(seconds)
 

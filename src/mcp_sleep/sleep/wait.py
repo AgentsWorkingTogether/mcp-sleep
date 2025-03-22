@@ -11,7 +11,7 @@ logger = logging.getLogger("mcp-sleep")
 class WaitMixin(SleepClient):
     """Mixin for Sleep waits operations."""
 
-    async def wait(self, seconds) -> None:
+    async def wait(self, seconds: int) -> None:
         """
         Get an aggregated overview of findings and resources grouped by providers.
 
