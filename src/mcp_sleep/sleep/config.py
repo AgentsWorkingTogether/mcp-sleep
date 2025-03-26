@@ -19,7 +19,7 @@ class SleepConfig:
         Raises:
             ValueError: If any required environment variable is missing
         """
-        timeout = os.getenv("MCP_SLEEP_TIMEOUT")
+        timeout = int(os.getenv("MCP_SLEEP_TIMEOUT"))
 
         return cls(
             timeout=timeout

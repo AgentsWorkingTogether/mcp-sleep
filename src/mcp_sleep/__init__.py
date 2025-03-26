@@ -24,7 +24,6 @@ logger = logging.getLogger("mcp-sleep")
 )
 @click.option(
     "--timeout",
-    default="60",
     help="Maximun time in seconds that the MCP server will wait for",
 )
 @click.option(
@@ -68,6 +67,8 @@ def main(
     # Set environment variables from command line arguments if provided
     if timeout:
         os.environ["MCP_SLEEP_TIMEOUT"] = timeout
+    elif os.environ.get('MCP_SLEEP_TIMEOUT') is None:
+        os.environ["MCP_SLEEP_TIMEOUT"] = str(60)  # Default value
 
     from . import server as server
 
